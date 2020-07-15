@@ -7,7 +7,7 @@ class okcupidbot:
         print('WAITING FOR BROWSER PROCESS TO COMPLETE...')
         self.driver = webdriver.Chrome()
         self.driver.get('http://okcupid.com')
-        time.sleep(10)
+        time.sleep(15)
         self.login()
 
     def login(self):
@@ -26,8 +26,8 @@ class okcupidbot:
     def start_intro(self):
         try:
             for i in range(1, 100 + 1):
-                person_name = self.driver.find_element_by_xpath('//*[@id="quickmatch-wrapper"]/div/div/span/div/div[2]/div/div[2]/span/div/div/div/div[1]/div[1]/div[1]').text
-                self.driver.find_element_by_xpath('//*[@id="quickmatch-wrapper"]/div/div/span/div/div[2]/div/div[2]/span/div/div/div/div[1]/div[1]/div[5]/a').click()
+                person_name = self.driver.find_element_by_xpath('//*[@id="main_content"]/div[3]/div/div[1]/div/div/div/div/div[1]/div[1]/span[1]').text
+                self.driver.find_element_by_xpath('//*[@id="main_content"]/div[3]/div/div[1]/div/div/div/div/div[1]/div[1]/span[5]/a').click()
                 time.sleep(10)
                 self.driver.find_element_by_xpath('/html/body/div[1]/main/div[1]/div[2]/div/div/div[3]/span/div/button[2]').click()
                 time.sleep(7)
